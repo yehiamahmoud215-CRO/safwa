@@ -281,6 +281,14 @@ window.OUD_CONFIG = {
   .qty-promo .mini-code{background:var(--red);color:#fff;border-radius:7px;padding:2px 8px;font-family:'Cairo';letter-spacing:1px}
   .qty-promo button{background:rgba(212,162,78,.08);border:1px solid rgba(212,162,78,.35);color:var(--gold-light);border-radius:7px;padding:2px 8px;font-size:11px;font-weight:900;cursor:pointer}
 
+
+  .drawer-promo{margin:12px 0 14px;padding:12px 14px;border-radius:16px;background:linear-gradient(180deg,rgba(212,162,78,.13),rgba(192,57,43,.10));border:1px solid rgba(212,162,78,.32);box-shadow:0 12px 30px -22px rgba(212,162,78,.75)}
+  .drawer-promo .promo-title{font-family:'Cairo';font-weight:900;font-size:14px;color:var(--gold-light);text-align:center;margin-bottom:8px}
+  .drawer-promo .promo-copy{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+  .drawer-promo .promo-code{direction:ltr;font-family:'Cairo';font-weight:900;font-size:18px;letter-spacing:1.5px;color:#fff;background:var(--red);border-radius:10px;padding:4px 18px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+  .drawer-promo .copy-btn{background:rgba(212,162,78,.10);border:1px solid rgba(212,162,78,.48);color:var(--gold-light);border-radius:10px;padding:5px 14px;font-size:12px;font-weight:900;cursor:pointer}
+  .drawer-promo .hint{margin-top:7px;text-align:center;font-size:12px;color:var(--muted);font-weight:700}
+
   /* منطقة الدفع داخل اللوحة */
   .checkout-zone{margin-top:8px;padding:12px;border-radius:14px;background:#120a05;border:1px dashed rgba(212,162,78,.3)}
   .promo{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.35);border-radius:12px;padding:10px}
@@ -535,7 +543,17 @@ window.OUD_CONFIG = {
   <div class="drawer-inner">
     <div class="drawer-handle"></div>
     <h3>اختر الكمية المناسبة</h3>
-    <p class="sub">كل ما زادت الكمية، وفّرت أكثر — والأسعار شاملة الشحن المجاني</p>
+    <p class="sub">كلما زادت الكمية وفّرت أكثر — الأسعار شاملة الشحن المجاني</p>
+
+    <div class="drawer-promo">
+      <div class="promo-title">كود خصم إضافي لعيونكم</div>
+      <div class="promo-copy">
+        <span class="promo-code" id="promoCode">X5</span>
+        <button class="copy-btn" onclick="copyPromo(event)">نسخ الكود</button>
+      </div>
+      <div class="hint">ضعه في سلة واحصل على خصم إضافي قبل إتمام الدفع</div>
+    </div>
+
     <div id="qtyList"></div>
 
     <div class="checkout-zone">
@@ -564,6 +582,7 @@ window.OUD_CONFIG = {
   document.getElementById("heroPrice").textContent = first.price;
   document.getElementById("heroOld").textContent   = first.oldPrice + " ر.س";
   document.getElementById("heroSave").textContent  = "وفّر " + (first.oldPrice-first.price) + " ر.س";
+  document.getElementById("promoCode").textContent = C.promoCode;
 
   /* ===== فيديو التفاصيل ===== */
   var dvBox = document.getElementById("detailVideoBox");
