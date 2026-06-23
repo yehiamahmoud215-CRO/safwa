@@ -183,8 +183,8 @@ window.OUD_CONFIG = {
   .proof p{font-size:14px;color:var(--muted);font-weight:600;margin-top:6px}
 
   /* فيديو تفاصيل */
-  .video-box{max-width:860px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid rgba(212,162,78,.25);position:relative;background:#000}
-  .video-box video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .video-box{max-width:430px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid rgba(212,162,78,.25);position:relative;background:#000;box-shadow:0 24px 70px -24px rgba(0,0,0,.9)}
+  .video-box video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
   .video-ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background-size:cover;background-position:center;position:relative;cursor:pointer}
   .video-ph::after{content:"";position:absolute;inset:0;background:rgba(8,4,2,.5)}
   .play-btn{position:relative;z-index:2;width:78px;height:78px;border-radius:50%;background:linear-gradient(180deg,#e8c887,#bd8a30);display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.5)}
@@ -262,19 +262,19 @@ window.OUD_CONFIG = {
   .drawer-handle{width:46px;height:5px;border-radius:999px;background:rgba(212,162,78,.4);margin:0 auto 16px}
   .drawer h3{text-align:center;font-size:22px;font-weight:900}
   .drawer .sub{text-align:center;color:var(--muted2);font-weight:600;font-size:13px;margin-bottom:18px}
-  .qty-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px;border-radius:16px;border:2px solid rgba(212,162,78,.2);background:#1d1109;cursor:pointer;margin-bottom:10px;transition:all .2s var(--ease)}
+  .qty-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;border-radius:14px;border:2px solid rgba(212,162,78,.2);background:#1d1109;cursor:pointer;margin-bottom:8px;transition:all .2s var(--ease)}
   .qty-opt:hover{border-color:rgba(212,162,78,.5)}
   .qty-opt.sel{border-color:var(--gold);background:#241509;box-shadow:0 0 24px -6px rgba(212,162,78,.4)}
-  .qty-opt .left{display:flex;align-items:center;gap:12px}
-  .qty-opt .radio{width:22px;height:22px;border-radius:50%;border:2px solid #6b5740;display:flex;align-items:center;justify-content:center;flex:none}
+  .qty-opt .left{display:flex;align-items:center;gap:10px;min-width:0}
+  .qty-opt .radio{width:18px;height:18px;border-radius:50%;border:2px solid #6b5740;display:flex;align-items:center;justify-content:center;flex:none}
   .qty-opt.sel .radio{border-color:var(--gold);background:var(--gold)}
-  .qty-opt.sel .radio::after{content:"✓";color:var(--ink);font-size:13px;font-weight:900}
-  .qty-opt .tt{font-weight:900;font-size:16px}
-  .qty-opt .nt{font-size:12px;color:var(--muted2);font-weight:700}
+  .qty-opt.sel .radio::after{content:"✓";color:var(--ink);font-size:11px;font-weight:900}
+  .qty-opt .tt{font-weight:900;font-size:15px}
+  .qty-opt .nt{font-size:11px;color:var(--muted2);font-weight:700;line-height:1.35}
   .qty-opt .pr{text-align:left;flex:none}
-  .qty-opt .pr .now{font-weight:900;font-size:18px;color:var(--gold-light)}
-  .qty-opt .pr .old{font-size:13px;text-decoration:line-through;color:#806a4f}
-  .qty-badge{font-size:10px;font-weight:900;padding:2px 9px;border-radius:999px;background:linear-gradient(90deg,#e8c887,#bd8a30);color:var(--ink);margin-inline-start:8px}
+  .qty-opt .pr .now{font-weight:900;font-size:16px;color:var(--gold-light);white-space:nowrap}
+  .qty-opt .pr .old{font-size:12px;text-decoration:line-through;color:#806a4f;white-space:nowrap}
+  .qty-badge{font-size:9px;font-weight:900;padding:1px 7px;border-radius:999px;background:linear-gradient(90deg,#e8c887,#bd8a30);color:var(--ink);margin-inline-start:6px;white-space:nowrap}
   .qty-badge.best{background:#241509;color:var(--gold-light);border:1px solid rgba(212,162,78,.4)}
 
   .qty-promo{margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:var(--gold-light);font-weight:800}
@@ -282,7 +282,7 @@ window.OUD_CONFIG = {
   .qty-promo button{background:rgba(212,162,78,.08);border:1px solid rgba(212,162,78,.35);color:var(--gold-light);border-radius:7px;padding:2px 8px;font-size:11px;font-weight:900;cursor:pointer}
 
   /* منطقة الدفع داخل اللوحة */
-  .checkout-zone{margin-top:8px;padding:16px;border-radius:16px;background:#120a05;border:1px dashed rgba(212,162,78,.3)}
+  .checkout-zone{margin-top:8px;padding:12px;border-radius:14px;background:#120a05;border:1px dashed rgba(212,162,78,.3)}
   .promo{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.35);border-radius:12px;padding:10px}
   .promo .lbl{font-size:13px;font-weight:700;color:#e8c887}
   .promo .code{font-family:'Cairo';font-weight:900;font-size:16px;color:#fff;background:var(--red);padding:3px 14px;border-radius:8px;letter-spacing:1px}
@@ -539,13 +539,7 @@ window.OUD_CONFIG = {
     <div id="qtyList"></div>
 
     <div class="checkout-zone">
-      <div class="promo">
-        <span class="lbl">🎁 خصم إضافي عند الدفع، استخدم كود:</span>
-        <span class="code" id="promoCode">X5</span>
-        <button class="copy-btn" onclick="copyPromo(event)">نسخ</button>
-      </div>
-      <div id="checkoutWidget"></div>
-      <div class="checkout-trust">🔒 دفع آمن 100% عبر منصة سلة</div>
+      <div class="checkout-trust" style="font-size:13px;color:var(--gold-light)">اضغط على الكمية المناسبة وسيتم توجيهك مباشرة لرابط الشراء الآمن عبر سلة</div>
     </div>
   </div>
 </div>
@@ -570,7 +564,6 @@ window.OUD_CONFIG = {
   document.getElementById("heroPrice").textContent = first.price;
   document.getElementById("heroOld").textContent   = first.oldPrice + " ر.س";
   document.getElementById("heroSave").textContent  = "وفّر " + (first.oldPrice-first.price) + " ر.س";
-  document.getElementById("promoCode").textContent = C.promoCode;
 
   /* ===== فيديو التفاصيل ===== */
   var dvBox = document.getElementById("detailVideoBox");
@@ -585,7 +578,7 @@ window.OUD_CONFIG = {
   var rv = document.getElementById("reviewVideos");
   rv.innerHTML = C.reviewVideos.map(function(v,i){
     if(v.src){
-      return '<div class="rvid fade-up" onclick="playReview(this)"><video preload="metadata" playsinline muted><source src="'+v.src+'" type="video/mp4"></video><div class="mini-play">▶</div></div>';
+      return '<div class="rvid fade-up" onclick="playReview(this)"><video preload="metadata" playsinline><source src="'+v.src+'" type="video/mp4"></video><div class="mini-play">▶</div></div>';
     }
     return '<div class="rvid fade-up"><div class="cover logo-cover"></div><div class="mini-play">▶</div></div>';
   }).join("");
@@ -598,25 +591,24 @@ window.OUD_CONFIG = {
   qtyList.innerHTML = C.bundles.map(function(b,i){
     var badge = b.popular ? '<span class="qty-badge">الأكثر مبيعاً</span>' : (b.best ? '<span class="qty-badge best">أفضل قيمة</span>' : '');
     return '<div class="qty-opt" data-i="'+i+'" onclick="selectQty('+i+')">'+
-      '<div class="left"><span class="radio"></span><div><div class="tt">'+b.title+badge+'</div><div class="nt">'+b.note+'</div>'+
-      '<div class="qty-promo"><span>سعر جملة + كود خصم إضافي</span><span class="mini-code">'+C.promoCode+'</span><button type="button" onclick="copyPromo(event)">نسخ</button></div></div></div>'+
+      '<div class="left"><span class="radio"></span><div><div class="tt">'+b.title+badge+'</div><div class="nt">'+b.note+'</div></div></div>'+
       '<div class="pr"><div class="now">'+b.price+' ر.س</div><div class="old">'+b.oldPrice+' ر.س</div></div>'+
     '</div>';
   }).join("");
 
   window.selectQty = function(i){
+    var b = C.bundles[i];
     window.OUD_selected = i;
     document.querySelectorAll(".qty-opt").forEach(function(el){
       el.classList.toggle("sel", +el.getAttribute("data-i")===i);
     });
-    renderWidget(i);
+    if(b && b.url){ window.location.href = b.url; }
   };
 
-  function renderWidget(i){
-    var b = C.bundles[i];
-    var wrap = document.getElementById("checkoutWidget");
-    // زر دفع مباشر يفتح رابط الشراء الخاص بالكمية
-    wrap.innerHTML = '<a href="'+b.url+'" target="_blank" rel="noopener" class="btn-gold cta-pulse" style="width:100%;min-height:58px;font-size:18px;text-decoration:none">إتمام الطلب والدفع — '+b.title+' ('+b.price+' ر.س) ←</a>';
+  function markSelectedQty(){
+    document.querySelectorAll(".qty-opt").forEach(function(el){
+      el.classList.toggle("sel", +el.getAttribute("data-i")===window.OUD_selected);
+    });
   }
 
   /* ===== فتح/إغلاق اللوحة ===== */
@@ -624,7 +616,7 @@ window.OUD_CONFIG = {
     document.getElementById("overlay").classList.add("open");
     document.getElementById("drawer").classList.add("open");
     document.body.style.overflow="hidden";
-    window.selectQty(window.OUD_selected); // يضبط الاختيار والودجت
+    markSelectedQty(); // يظهر الكمية المقترحة بدون توجيه تلقائي
   };
   window.closeDrawer = function(){
     document.getElementById("overlay").classList.remove("open");
@@ -647,7 +639,12 @@ window.OUD_CONFIG = {
   window.playReview = function(el){
     var video = el.querySelector("video");
     if(!video) return;
+    document.querySelectorAll("#reviewVideos video").forEach(function(v){
+      if(v !== video){ v.pause(); v.removeAttribute("controls"); }
+    });
     el.querySelectorAll(".cover,.mini-play").forEach(function(x){x.style.display="none";});
+    video.muted = false;
+    video.volume = 1;
     video.setAttribute("controls","");
     video.play();
   };
