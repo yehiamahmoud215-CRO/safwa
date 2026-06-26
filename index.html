@@ -131,15 +131,18 @@ window.OUD_CONFIG = {
   .sec-deco i.r{background:linear-gradient(270deg,transparent,var(--gold))}
   .sec-deco b{width:8px;height:8px;transform:rotate(45deg);background:var(--gold);display:block}
   .sec-title p{color:var(--muted);font-weight:600;margin-top:8px}
-  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .proof{overflow:hidden;border-radius:18px}
-  .proof .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
-  .proof .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-  .proof:hover .ph img{transform:scale(1.06)}
-  .proof .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,11,6,.8),transparent)}
-  .proof .bd{padding:18px}
-  .proof h3{color:var(--gold-light);font-size:16px;font-weight:900}
-  .proof p{font-size:14px;color:var(--muted);font-weight:600;margin-top:6px}
+  /* ===== صور الإثبات كاملة ===== */
+  .grid4{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(max-width:768px){.grid4{grid-template-columns:1fr;gap:20px}}
+  .proof{overflow:hidden;border-radius:20px;transition:transform .3s var(--ease),box-shadow .3s;cursor:default;width:100%}
+  .proof:hover{transform:translateY(-4px);box-shadow:0 20px 60px -16px rgba(212,162,78,.35)}
+  .proof .ph{position:relative;overflow:hidden;border-radius:20px 20px 0 0;width:100%}
+  .proof .ph img{width:100%;height:auto;display:block;object-fit:contain;transition:transform .8s var(--ease)}
+  .proof:hover .ph img{transform:scale(1.03)}
+  .proof .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,6,2,.6) 0%,transparent 40%);pointer-events:none}
+  .proof .bd{padding:18px 20px 22px;background:linear-gradient(180deg,#1d1109,#160d07);border-top:1px solid rgba(212,162,78,.18)}
+  .proof h3{color:var(--gold-light);font-size:17px;font-weight:900;margin-bottom:7px}
+  .proof p{font-size:14px;color:var(--muted);font-weight:600;line-height:1.6}
   .video-box{max-width:430px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid rgba(212,162,78,.25);position:relative;background:#000;box-shadow:0 24px 70px -24px rgba(0,0,0,.9)}
   .video-box video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
   .video-ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background-size:cover;background-position:center;position:relative;cursor:pointer}
@@ -217,7 +220,6 @@ window.OUD_CONFIG = {
     .brand .nm{font-size:15px}
   }
   @media(max-width:520px){
-    .grid4,
     .hero h1{font-size:29px}
   }
   .slider-wrap{position:relative;overflow:hidden}
@@ -325,6 +327,13 @@ window.OUD_CONFIG = {
   .guarantee-title{font-size:17px;font-weight:900;color:var(--gold-light);margin-bottom:6px}
   .guarantee-body{font-size:14px;color:var(--muted);line-height:1.6;font-weight:600}
   .guarantee-body b.gold{color:var(--gold-light)}
+
+  .review-videos.full-frame{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .review-videos.full-frame .rvid{aspect-ratio:auto;min-height:0}
+  .review-videos.full-frame .rvid video,.review-videos.full-frame .rvid .cover{position:relative;width:100%;height:auto;aspect-ratio:9/14}
+  .review-videos.full-frame .rvid .caption{padding:12px 10px 14px;text-align:right;background:linear-gradient(180deg,#120a05,#0c0603);border-top:1px solid rgba(212,162,78,.12)}
+  .review-videos.full-frame .rvid .caption .nm{position:static;display:block;font-size:14px}
+  .review-videos.full-frame .rvid .caption .txt{font-size:12px;color:var(--muted);line-height:1.5;margin-top:4px}
 </style>
 </head>
 <body>
@@ -354,8 +363,8 @@ window.OUD_CONFIG = {
   <div class="container hero" style="padding:38px 0 50px;max-width:780px;margin:0 auto;text-align:center">
     <div>
       <span class="badge">★ ضمان ذهبي — جرّبه أو استرجع مبلغك كامل</span>
-      <h1>عود <span class="gold-text">يفوح ويثبت</span> على ملابسك أيام — مو ساعتين</h1>
-      <p class="lead" style="margin:0 auto">اشتريت عود قبل وخذلك؟ الرائحة راحت بعد ساعة، الكسر كانت صغيرة، ومعلوم مغشوش. <b class="gold">العود الأزرق VIP</b> طبيعي محسّن — كسرة واحدة تكفي المجلس كله.</p>
+      <h1>العود الأزرق <span class="gold-text">اللي يثبت وجوده من أول تبخيرة</span></h1>
+      <p class="lead" style="margin:0 auto">جربت عود وخذلك؟ راحت ريحته بعد شوي، أو أكلته النار بسرعة وما حسّيت بقيمته. <b class="gold">العود الأزرق VIP</b> — زبد عالي يصمل على الجمر، وريحة بخورية فاخرة تملأ المجلس وتبقى.</p>
       <div class="price-row">
         <span class="price-now" id="heroPrice">95</span>
         <span class="gold" style="font-size:18px;font-weight:800;margin-bottom:6px">ر.س</span>
@@ -392,7 +401,7 @@ window.OUD_CONFIG = {
         <div class="bd">
           <div class="proof-label">🔥 لحظة الإحراق</div>
           <h3>يغلي ويزبد على الجمر</h3>
-          <p>تشوف الزيت الطبيعي وهو يطلع بنفسه — هذا هو الدليل إنه عود حقيقي.</p>
+          <p>تشوف الزيت الطبيعي وهو يطلع بنفسه — هذا هو الدليل إنه عود حقيقي ومو مغشوش.</p>
         </div>
       </div>
       <div class="card proof fade-up">
@@ -400,7 +409,7 @@ window.OUD_CONFIG = {
         <div class="bd">
           <div class="proof-label">🌫️ الدخانة</div>
           <h3>دخان كثيف يملأ المكان</h3>
-          <p>ما تحتاج تقرّب وجهك — الدخانة تفوح وتوصلك قبل ما تدري.</p>
+          <p>ما تحتاج تقرّب وجهك — الدخانة تفوح وتوصلك قبل ما تدري وتملأ المجلس كله.</p>
         </div>
       </div>
       <div class="card proof fade-up">
@@ -408,15 +417,15 @@ window.OUD_CONFIG = {
         <div class="bd">
           <div class="proof-label">🪵 حجم الكسر</div>
           <h3>كسر راهية وكبيرة</h3>
-          <p>الكسرة الواحدة تكفّي المجلس — مو قطعة صغيرة تحترق في دقيقة.</p>
+          <p>الكسرة الواحدة تكفّي المجلس بأكمله — مو قطعة صغيرة تحترق في دقيقة وتخلص.</p>
         </div>
       </div>
       <div class="card proof fade-up">
-        <div class="ph"><img src="" data-img="package" alt="باكجينج العود الأزرق VIP" loading="lazy"></div>
+        <div class="ph"><img src="" data-img="package" alt="تغليف العود الأزرق VIP" loading="lazy"></div>
         <div class="bd">
           <div class="proof-label">🎁 اللي يوصلك</div>
-          <h3>باكجينج فاخر بيوصلك كذا</h3>
-          <p>هذا اللي بيجيك على بابك — تغليف يليق يُهدى لأعز الناس.</p>
+          <h3>تغليف فاخر يليق بالإهداء</h3>
+          <p>هذا اللي بيجيك على بابك — تغليف راقٍ يُبيّض الوجه لو قدّمته هدية في أي مناسبة.</p>
         </div>
       </div>
     </div>
@@ -535,7 +544,8 @@ window.OUD_CONFIG = {
       <p>ما في كلام — شوف ردة فعلهم بنفسك.</p>
     </div>
     <div class="slider-wrap fade-up" style="margin-bottom:20px">
-         <div class="slider-track" id="videoSlider"></div>
+ >
+      <div class="slider-track" id="videoSlider"></div>
       <div class="slider-nav">
         <button class="slider-btn" onclick="slideVideos(-1)" aria-label="السابق">‹</button>
         <div class="slider-dots" id="videoDots"></div>
